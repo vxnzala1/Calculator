@@ -1,32 +1,54 @@
+/* Estilos para el contenedor principal de la calculadora */
 .calculator {
-    width: 200px;
-    margin: auto;
+    /* Define un borde redondeado para suavizar los bordes de la calculadora */
+    border-radius: 10px;
+    /* Aplica una sombra suave alrededor de la calculadora para darle un efecto elevado */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para la pantalla (display) de la calculadora */
 .display {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: right;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-button {
+    /* Espacio interior alrededor del contenido */
     padding: 20px;
-    font-size: 18px;
 }
 
+/* Estilos comunes para todos los botones de la calculadora */
+button {
+    /* Margen superior e inferior para separar los botones entre sí */
+    margin: 5px 0;
+    /* Quita el borde por defecto de los botones */
+    border: none;
+    /* Suaviza los bordes de los botones */
+    border-radius: 5px;
+    /* Transición suave para cambios en el color de fondo (al pasar el mouse sobre el botón) */
+    transition: background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+button:hover {
+    /* Oscurece ligeramente el color de fondo del botón */
+    filter: brightness(0.9);
+}
+
+/* Estilo para quitar el contorno al hacer foco en los botones */
+button:focus {
+    outline: none;
+}
+
+/* Estilos específicos para los botones de operadores (+, -, *, /) */
 .op {
-    background-color: #f9a602;
+    /* Color de fondo amarillo (warning) de Bootstrap */
+    background-color: #ffc107;
 }
 
+/* Estilos específicos para el botón de igual (=) */
 .eq {
-    background-color: #02a4d3;
+    /* Color de fondo azul (primary) de Bootstrap */
+    background-color: #007bff;
 }
 
+/* Estilos específicos para el botón de limpiar (Clear) */
 .clear {
-    background-color: #ff5252;
+    /* Color de fondo rojo (danger) de Bootstrap */
+    background-color: #dc3545;
 }

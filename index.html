@@ -2,36 +2,58 @@
 <html>
 <head>
     <title>Simple Calculator</title>
+    <!-- Inclusión del CSS de Bootstrap desde un CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Inclusión de tu archivo CSS personalizado -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="calculator">
-        <div class="display">
-            <span id="display">0</span>
-        </div>
-        <div class="buttons">
-            <!-- Numbers -->
-            <button class="num" onclick="appendNumber(1)">1</button>
-            <button class="num" onclick="appendNumber(2)">2</button>
-            <button class="num" onclick="appendNumber(3)">3</button>
-            <button class="num" onclick="appendNumber(4)">4</button>
-            <button class="num" onclick="appendNumber(5)">5</button>
-            <button class="num" onclick="appendNumber(6)">6</button>
-            <button class="num" onclick="appendNumber(7)">7</button>
-            <button class="num" onclick="appendNumber(8)">8</button>
-            <button class="num" onclick="appendNumber(9)">9</button>
-            <button class="num" onclick="appendNumber(0)">0</button>
-            <!-- Operators -->
-            <button class="op" onclick="setOperator('+')">+</button>
-            <button class="op" onclick="setOperator('-')">-</button>
-            <button class="op" onclick="setOperator('*')">*</button>
-            <button class="op" onclick="setOperator('/')">/</button>
-            <!-- Equals -->
-            <button class="eq" onclick="calculate()">=</button>
-            <!-- Clear -->
-            <button class="clear" onclick="clearDisplay()">Clear</button>
+    <!-- Contenedor principal de Bootstrap para centrar y espaciar contenido -->
+    <div class="container mt-5">
+        <!-- Fila que justifica el contenido al centro -->
+        <div class="row justify-content-center">
+            <!-- Columna de tamaño mediano (para pantallas medianas y grandes) -->
+            <div class="col-md-4">
+                <!-- Clases para el diseño de la calculadora: tarjeta con bordes redondeados y sombra -->
+                <div class="calculator card">
+                    <!-- Cabecera de la tarjeta para la pantalla de la calculadora -->
+                    <div class="display card-header bg-dark text-white">
+                        <span id="display" class="h3">0</span>
+                    </div>
+                    <!-- Cuerpo de la tarjeta con botones de la calculadora -->
+                    <div class="buttons card-body">
+                        <!-- Cada fila representa una línea de botones en la calculadora -->
+                        <div class="row">
+                            <!-- Botones numéricos y operadores, con clases de Bootstrap para diseño -->
+                            <button class="num btn btn-light col" onclick="appendNumber(1)">1</button>
+                            <button class="num btn btn-light col" onclick="appendNumber(2)">2</button>
+                            <button class="num btn btn-light col" onclick="appendNumber(3)">3</button>
+                            <button class="op btn btn-warning col" onclick="setOperator('+')">+</button>
+                        </div>
+                        <div class="row">
+                            <button class="num btn btn-light col" onclick="appendNumber(4)">4</button>
+                            <button class="num btn btn-light col" onclick="appendNumber(5)">5</button>
+                            <button class="num btn btn-light col" onclick="appendNumber(6)">6</button>
+                            <button class="op btn btn-warning col" onclick="setOperator('-')">-</button>
+                        </div>
+                        <div class="row">
+                            <button class="num btn btn-light col" onclick="appendNumber(7)">7</button>
+                            <button class="num btn btn-light col" onclick="appendNumber(8)">8</button>
+                            <button class="num btn btn-light col" onclick="appendNumber(9)">9</button>
+                            <button class="op btn btn-warning col" onclick="setOperator('*')">*</button>
+                        </div>
+                        <div class="row">
+                            <button class="num btn btn-light col" onclick="appendNumber(0)">0</button>
+                            <button class="eq btn btn-primary col" onclick="calculate()">=</button>
+                            <button class="clear btn btn-danger col-6" onclick="clearDisplay()">Clear</button>
+                            <button class="op btn btn-warning col" onclick="setOperator('/')">/</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="main.js"></script>
+    <!-- Inclusión de tu archivo JS para la funcionalidad de la calculadora -->
+    <script src="script.js"></script>
 </body>
 </html>
