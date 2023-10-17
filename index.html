@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <span id="display">0</span>
+        </div>
+        <div class="buttons">
+            <!-- Numbers -->
+            <button class="num" onclick="appendNumber(1)">1</button>
+            <button class="num" onclick="appendNumber(2)">2</button>
+            <button class="num" onclick="appendNumber(3)">3</button>
+            <button class="num" onclick="appendNumber(4)">4</button>
+            <button class="num" onclick="appendNumber(5)">5</button>
+            <button class="num" onclick="appendNumber(6)">6</button>
+            <button class="num" onclick="appendNumber(7)">7</button>
+            <button class="num" onclick="appendNumber(8)">8</button>
+            <button class="num" onclick="appendNumber(9)">9</button>
+            <button class="num" onclick="appendNumber(0)">0</button>
+            <!-- Operators -->
+            <button class="op" onclick="setOperator('+')">+</button>
+            <button class="op" onclick="setOperator('-')">-</button>
+            <button class="op" onclick="setOperator('*')">*</button>
+            <button class="op" onclick="setOperator('/')">/</button>
+            <!-- Equals -->
+            <button class="eq" onclick="calculate()">=</button>
+            <!-- Clear -->
+            <button class="clear" onclick="clearDisplay()">Clear</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
