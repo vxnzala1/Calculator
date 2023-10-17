@@ -16,6 +16,7 @@ function appendNumber(num) {
 function setOperator(op) {
     if (firstNumber === "") return;
     operator = op;
+    display.textContent = operator;
 }
 
 function calculate() {
@@ -26,19 +27,19 @@ function calculate() {
     if (result === "Error") {
         display.textContent = "Error";
     } else {
-        display.textContent = result;
+        display.textContent = Math.round(result * 1000000) / 1000000; // Round to prevent overflow
         firstNumber = result;
     }
     secondNumber = "";
     operator = "";
 }
 
-function operate(operator, num1, num2) {
-    switch (operator) {
-        case "+": return num1 + num2;
-        case "-": return num1 - num2;
-        case "*": return num1 * num2;
-        case "/": return num2 === 0 ? "Error" : num1 / num2;
+function operate(op, num1, num2) {
+    switch (op) {
+        case '+': return num1 + num2;
+        case '-': return num1 - num2;
+        case '*': return num1 * num2;
+        case '/': return num2 === 0 ? "Error" : num1 / num2;
         default: return "Error";
     }
 }
@@ -49,3 +50,7 @@ function clearDisplay() {
     operator = "";
     display.textContent = "0";
 }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    display = document.getElementById("display");
+});
